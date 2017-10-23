@@ -1,0 +1,18 @@
+<div class="weather col-xs-4">
+    <h3>Weather Temperature</h3>
+    <div class="location col-xs-12">{{weatherlist.city.name}},{{weatherlist.city.country}}</div>
+    <div class="col-xs-12 weather-icon">
+        <img src="{{icon}}" alt="icon-weather">{{weatherlist.weather.description}}
+        <div class="desc col-xs-6" *ngFor="let temp of weatherlist.list">
+            <span class="temp-type" *ngFor="let weath of temp.weather">
+                {{weath.description}}</span>
+        </div>
+        <div class=" weather-temp col-xs-12">
+            <span class="temp col-xs-6 " *ngFor="let temp of weatherlist.list">
+            {{temp.temp.max}}</span>
+            <div class="change col-xs-6">
+                <button class="btn" (click)="changetoF()">F</button>
+                <button class="btn" (click)="changetoC()">C</button>
+            </div>
+        </div>
+    </div>
